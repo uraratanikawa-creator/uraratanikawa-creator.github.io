@@ -1,0 +1,285 @@
+/* --- 웹폰트 선언 (국립박물관문화재단클래식) --- */
+@font-face {
+    font-family: 'MuseumClassic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/NMKFClassic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2b1d2f;
+    color: #f4f0ec;
+    font-family: 'MuseumClassic', 'Malgun Gothic', sans-serif;
+    overflow-x: hidden;
+}
+
+.site-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    position: relative;
+}
+
+.content-box {
+    width: 100%;
+    max-width: 1100px;
+}
+
+
+
+.sec-1 .main-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #f4f0ec;
+}
+
+.sec-2 .center-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paper-ball-img {
+    width: 180px;
+    height: auto;
+}
+
+.sec-3 .note-paper {
+    background-color: #e6dfd5;
+    color: #2b1d2f;
+    padding: 60px 70px;
+    border-radius: 2px;
+    background-image: linear-gradient(#d5cebe 1px, transparent 1px), linear-gradient(90deg, #d5cebe 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.sec-3 .note-text {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 28px;
+    font-family: 'MuseumClassic', sans-serif;
+}
+
+/* --- 산 레이아웃: 배경에 고정되어 텍스트 뒤에 겹치도록 설정 --- */
+.sticky-story-container {
+    position: relative;
+    width: 100%;
+}
+
+.sticky-visual-area {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 8vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.mountains-wrapper {
+    position: relative;
+    width: 100%;
+    height: 550px;
+}
+
+.mountain-item {
+    position: absolute;
+    bottom: 0;
+    object-fit: contain;
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+/* 4.jpg 비율에 맞춘 산 크기와 넓은 간격 */
+.mountain-left {
+    height: 540px;
+    left: 16%;
+    z-index: 1;
+}
+
+.mountain-center {
+    height: 360px;
+    left: 38%;
+    z-index: 2;
+}
+
+.mountain-right {
+    height: 260px;
+    left: 58%;
+    z-index: 3;
+}
+
+/* --- 단계별 하이라이트 (하나만 진하고 나머지 투명) --- */
+.sticky-story-container[data-active="step1"] .mountain-left { opacity: 1; }
+.sticky-story-container[data-active="step1"] .mountain-center { opacity: 0.2; }
+.sticky-story-container[data-active="step1"] .mountain-right { opacity: 0.2; }
+
+.sticky-story-container[data-active="step2"] .mountain-left { opacity: 0.2; }
+.sticky-story-container[data-active="step2"] .mountain-center { opacity: 1; }
+.sticky-story-container[data-active="step2"] .mountain-right { opacity: 0.2; }
+
+.sticky-story-container[data-active="step3"] .mountain-left { opacity: 0.2; }
+.sticky-story-container[data-active="step3"] .mountain-center { opacity: 0.2; }
+.sticky-story-container[data-active="step3"] .mountain-right { opacity: 1; }
+
+/* 오른쪽 스크롤 텍스트 영역 (-100vh로 수정하여 위 섹션 침범 방지) */
+.scroll-text-area {
+    position: relative;
+    width: 100%;
+    margin-top: -100vh;
+    z-index: 2;
+}
+
+.story-step {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12%;
+}
+
+.right-col {
+    width: 55%;
+    position: relative;
+}
+
+/* 28%, 26%, 23% 숫자를 4.jpg처럼 큰 산의 왼쪽에 배치 */
+.percent-num {
+    position: absolute;
+    left: -38%;
+    top: 40px;
+    font-size: 2.2rem;
+    font-weight: normal;
+    color: #d1bfe3;
+}
+
+.section-heading {
+    font-size: 1.55rem;
+    font-weight: normal;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    color: #f4f0ec;
+}
+
+.sub-heading {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: #e2d1f0;
+    line-height: 1.5;
+}
+
+.sub-title {
+    font-weight: normal;
+    margin-bottom: 8px;
+    margin-top: 14px;
+    color: #f4f0ec;
+}
+
+.desc-text {
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    color: #dfd8e5;
+}
+
+.quote-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #dfd8e5;
+    margin-top: 16px;
+}
+
+/* 폰트: fonts/ 폴더에 폰트 파일을 넣으세요 (파일명이 다르면 url만 수정) */
+@font-face{font-family:"NMMFClassic";src:local("국립박물관문화재단클래식"),url("../fonts/NMMFClassic.woff2") format("woff2"),url("../fonts/NMMFClassic.ttf") format("truetype");font-display:swap}
+
+/* 모두 #intro-game-section 하위로 한정 → 다른 섹션에 영향 없음 */
+#intro-game-section{margin:0;padding:0;background:#2b1d2f;color:#f4f0ec;font-family:"NMMFClassic","국립박물관문화재단클래식","Nanum Myeongjo","Noto Serif KR",serif}
+#intro-game-section *{box-sizing:border-box;font-family:inherit}
+#intro-game-section .game-stage{position:relative;width:100%;max-width:1100px;aspect-ratio:16/9;margin:0 auto;overflow:hidden;background:#2b1d2f}
+
+/* 노이즈 */
+#intro-game-section .noise{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated;opacity:1;transition:opacity 2.6s ease;pointer-events:none;z-index:6}
+
+/* 타이틀 / START */
+#intro-game-section .game-title{position:absolute;left:0;right:0;top:24%;margin:0;text-align:center;font-size:clamp(2rem,7vw,4.4rem);font-weight:400;letter-spacing:.12em;color:#f4f0ec;z-index:8;transition:opacity 1.8s ease}
+#intro-game-section .start-button{position:absolute;left:50%;top:64%;transform:translateX(-50%);padding:.6em 2.4em;font-size:clamp(.9rem,2vw,1.2rem);letter-spacing:.2em;background:#b58ac4;color:#f4f0ec;border:2px solid #f4f0ec;cursor:pointer;z-index:8;transition:opacity 1.2s ease,filter .2s}
+#intro-game-section .start-button:hover,#intro-game-section .start-button:focus-visible{filter:brightness(1.15);outline:2px solid #f4f0ec;outline-offset:3px}
+#intro-game-section.started .game-title,#intro-game-section.started .start-button{opacity:0;pointer-events:none}
+#intro-game-section.started .noise{opacity:0}
+
+/* 게임 화면 */
+#intro-game-section .game-visual{position:absolute;inset:0;background:#332132;opacity:0;transition:opacity 2.6s ease,filter 1.5s ease;filter:saturate(var(--sat,1)) brightness(var(--br,1))}
+#intro-game-section.started .game-visual{opacity:1}
+#intro-game-section .game-visual[data-time="n"]{--br:.75}
+#intro-game-section .room{position:absolute;inset:0;background:url("../images/room.png") center/contain no-repeat}
+#intro-game-section .game-visual.work .room{background-image:url("../images/office.png")}
+#intro-game-section .game-visual.work .obj,#intro-game-section .game-visual.work .hero{display:none}
+#intro-game-section .hero{position:absolute;left:50%;top:70%;width:19.5%;aspect-ratio:4/3;transform:translate(-50%,-92%);background:url("../images/character.png") center/contain no-repeat;transition:left 1s ease-in-out,top 1s ease-in-out;z-index:2}
+
+/* 가구 (클릭 대상) */
+#intro-game-section .obj{position:absolute;background:transparent;border:2px solid transparent;color:transparent;font-size:.85rem;cursor:pointer;z-index:3;transition:border-color .2s,color .2s,background .2s}
+#intro-game-section .obj:hover,#intro-game-section .obj:focus-visible{border-color:#b58ac4;color:#f4f0ec;background:rgba(181,138,196,.2);outline:none}
+#intro-game-section .obj.hidden{display:none}
+#intro-game-section .obj.done{opacity:.5}
+#intro-game-section .obj.off{pointer-events:none;opacity:.2}
+#intro-game-section .obj.glow{border-color:#f4f0ec;color:#f4f0ec;animation:pulse 2s infinite}
+@keyframes pulse{50%{background:rgba(244,240,236,.22)}}
+
+/* 시야 협착 */
+#intro-game-section .vignette{position:absolute;inset:0;pointer-events:none;z-index:4;background:radial-gradient(ellipse at center,transparent calc(78% - var(--vig,0%)),rgba(0,0,0,.88) 100%);transition:background 1.5s}
+
+/* 정신상태 게이지 (수치 없이 막대만) */
+#intro-game-section .gauge{position:absolute;right:3%;top:4%;width:22%;z-index:5;font-size:clamp(.7rem,1.6vw,1rem);opacity:0;transition:opacity 2.6s}
+#intro-game-section.started .gauge{opacity:1}
+#intro-game-section .gauge-bar{margin-top:.4em;height:1.6em;border-radius:1em;background:#9a8878;padding:.25em}
+#intro-game-section .gauge-bar i{display:block;height:100%;width:12%;border-radius:1em;background:rgb(64,74,40);transition:width 1.2s,background 1.2s}
+
+/* 텍스트 / 선택지 */
+#intro-game-section .day-label{position:absolute;left:3%;top:4%;font-size:clamp(.75rem,1.6vw,1rem);opacity:.8;z-index:5}
+#intro-game-section .game-text{position:absolute;left:5%;right:5%;bottom:4%;min-height:3.2em;padding:.8em 1.2em;background:rgba(79,58,84,.92);border:1px solid #f4f0ec;font-size:clamp(.85rem,2vw,1.15rem);line-height:1.7;z-index:5;opacity:0;transition:opacity .5s}
+#intro-game-section .game-text.show{opacity:1}
+#intro-game-section .choice-popup{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);width:min(80%,540px);padding:1.2rem;background:#4f3a54;border:2px solid #f4f0ec;z-index:7;display:none}
+#intro-game-section .choice-popup.show{display:block}
+#intro-game-section .choice-list{display:flex;flex-direction:column;gap:.7rem}
+#intro-game-section .choice-btn{padding:.7em 1em;background:#4f3a54;color:#f4f0ec;border:2px solid #f4f0ec;font-size:clamp(.8rem,1.9vw,1.05rem);text-align:left;cursor:pointer;transition:background .2s}
+#intro-game-section .choice-btn:hover,#intro-game-section .choice-btn:focus-visible{background:#b58ac4;outline:none}
+#intro-game-section .choice-btn.refuse{animation:tremble .5s infinite;background:#555;color:#999;border-color:#888;pointer-events:none}
+
+/* 연출 */
+#intro-game-section .game-stage.flash::after{content:"";position:absolute;inset:0;background:#fff;z-index:9;animation:flash 1.4s ease-out forwards;pointer-events:none}
+@keyframes flash{0%{opacity:1}100%{opacity:0}}
+#intro-game-section .game-stage.shake{animation:shake .12s 7}
+@keyframes shake{0%,100%{transform:translate(0)}25%{transform:translate(-5px,3px)}75%{transform:translate(5px,-3px)}}
+@keyframes tremble{0%,100%{transform:translateX(0)}50%{transform:translateX(-3px)}}
+#intro-game-section .game-stage.dark .game-visual{filter:brightness(.1)}
+#intro-game-section .game-stage.fade .game-visual{opacity:0;transition-duration:.5s}
+
+/* 종료 */
+#intro-game-section .gameover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:2rem;opacity:0;pointer-events:none;z-index:10;transition:opacity 2.5s}
+#intro-game-section.over .gameover{opacity:1;pointer-events:auto}
+#intro-game-section .go-main{font-size:clamp(1rem,2.6vw,1.6rem);margin:0}
+#intro-game-section .go-sub{margin:0}
+#intro-game-section .scroll-arrow{margin-top:1.5rem;background:none;border:none;color:#f4f0ec;font-size:1.8rem;cursor:pointer;animation:bob 1.6s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+#intro-game-section.over .game-text,#intro-game-section.over .choice-popup,#intro-game-section.over .day-label,#intro-game-section.over .gauge{opacity:0}
+
+@media (prefers-reduced-motion:reduce){#intro-game-section *{animation:none!important}}
