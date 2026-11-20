@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기말 프로젝트 - 은둔형 외토리 분석</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="intro-game-section">
+  <div class="game-stage">
+
+    <div class="game-visual" data-time="m">
+      <div class="room"></div>
+      <button class="obj" data-obj="curtain" style="left:57%;top:24%;width:10%;height:21%">커튼</button>
+      <button class="obj" data-obj="tv"      style="left:39%;top:14%;width:12%;height:21%">TV</button>
+      <button class="obj" data-obj="kitchen" style="left:22%;top:38%;width:14%;height:28%">주방</button>
+      <button class="obj" data-obj="bed"     style="left:54%;top:47%;width:23%;height:27%">침대</button>
+      <button class="obj" data-obj="door"    style="left:36%;top:45%;width:8%;height:43%">문</button>
+      <div class="hero"></div>
+    </div>
+
+    <div class="vignette"></div>
+    <div class="gauge"><span>정신상태</span><div class="gauge-bar"><i></i></div></div>
+    <div class="day-label"></div>
+    <div class="game-text"></div>
+    <div class="choice-popup"><div class="choice-list"></div></div>
+
+    <canvas class="noise" width="160" height="90"></canvas>
+
+    <h1 class="game-title">선택할 수 없는 아침</h1>
+    <button class="start-button" type="button">START</button>
+
+    <div class="gameover">
+      <p class="go-main">GAME OVER — 「선택 불능(은둔)」 상태에 도달했습니다.</p>
+      <p class="go-sub">당신은 결코 처음부터 게으른 것이 아니었습니다.</p>
+      <button class="scroll-arrow" type="button" aria-label="다음 섹션으로">▼</button>
+    </div>
+
+  </div>
+</section>
+    <div class="site-container">
+
+        <!-- Section 1 (1.jpg) -->
+        <section class="sec-1">
+            <div class="content-box">
+                <h1 class="main-title">다른 선택이 있었을까?</h1>
+            </div>
+        </section>
+
+        <!-- Section 2 (2.jpg) -->
+        <section class="sec-2">
+            <div class="content-box center-item">
+                <img src="images/paper.png" alt="구겨진 종이" class="paper-ball-img">
+            </div>
+        </section>
+
+        <!-- Section 3 (3.jpg) -->
+        <section class="sec-3">
+            <div class="content-box">
+                <div class="note-paper">
+                    <p class="note-text">
+                        은둔형 외토리(히키코모리) 문제는 단순히 개인의 게으름이나 의지의 문제가 아닙니다. 실제로 정신건강의학과를 방문하여 진단을 받은 은둔형 외토리 당사자의 약 80% 이상이 어떠한 형태로든 정신질환(정신건강상의 문제)을 겪고 있는 것으로 나타났습니다.
+                    </p>
+                    <p class="note-text">
+                        즉, 은둔 상태는 마음의 병이나 뇌 기능을 불균형, 혹은 치열한 사회적 스트레스로부터 스스로를 보호하기 위한 '신호'일 수 있습니다. 그렇다면 은둔형 외토리 당사자들에게서 주로 나타나는 대표적인 정신질환에는 어떤 것들이 있는지, 전체의 80% 이상을 차지하는 주요 진단명과 그 원인을 하나씩 살펴보겠습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 고정된 산 레이아웃과 스크롤되는 텍스트 영역 -->
+        <div class="sticky-story-container" data-active="step1">
+            <!-- 화면에 고정되어 위치하는 3개의 산 (아래 라인 정렬 및 겹침 허용) -->
+            <div class="sticky-visual-area">
+                <div class="mountains-wrapper">
+                    <img src="images/mountain.png" alt="왼쪽 산" class="mountain-item mountain-left">
+                    <img src="images/mountain.png" alt="중앙 산" class="mountain-item mountain-center">
+                    <img src="images/mountain.png" alt="오른쪽 산" class="mountain-item mountain-right">
+                </div>
+            </div>
+
+            <!-- 스크롤되면서 텍스트가 바뀌는 영역들 -->
+            <div class="scroll-text-area">
+                
+                <!-- Step 1: 4번째 화면 (왼쪽 산만 진하게) -->
+                <div class="story-step" data-step="step1">
+                    <div class="right-col">
+                        <span class="percent-num">28%</span>
+                        <h2 class="section-heading">신경성 장애<br>스트레스 관련 장애 및 신체표현성 장애</h2>
+                        <p class="desc-text">적응장애, 공황장애, 강박장애, 사회불안장애(대인공포증), 범불안장애, PTSD(외상후 스트레스 장애) 등.</p>
+                        <p class="desc-text">학교나 직장에서의 인간관계 갈등, 업무 스트레스, 급격한 환경 변화 등 일상생활에서의 강한 스트레스나 트라우마가 계기가 됩니다.</p>
+                        <p class="quote-text">"다시 공황발작이 오면 어쩌지", "사람들이 나를 어떻게 볼까(사회불안)"와 같은 강한 불안과 공포감으로부터 스스로를 보호하기 위해 외출과 사회 참여를 피하게 되며, 결과적으로 은둔으로 이어지는 경우가 많습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: 5번째 화면 (왼쪽 + 가운데 산이 진하게) -->
+                <div class="story-step" data-step="step2">
+                    <div class="right-col">
+                        <span class="percent-num">26%</span>
+                        <h2 class="section-heading">신경성 장애<br>스트레스 관련 장애 및 신체표현성 장애</h2>
+                        <p class="sub-heading">조현병, 망상장애 등.</p>
+                        <p class="sub-title">병 및 은둔으로 이어지는 요인:</p>
+                        <p class="desc-text">뇌 기능 및 정보 처리 능력의 균형이 깨지면서 "나를 욕하는 것 같다", "감시당하고 있다"와 같은 환각이나 망상이 나타나거나, 의욕이 떨어지고 아무것도 하기 싫어지는 증상(음성증상)이 발생합니다.</p>
+                        <p class="desc-text">현실에 적응하거나 타인과 소통하는 것이 매우 어려워지기 때문에, 타인의 시선을 피해 집에 머물 수밖에 없는 상태에 빠지기 쉽습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: 6번째 화면 (왼쪽 + 가운데 + 오른쪽 모두 진하게) -->
+                <div class="story-step" data-step="step3">
+                    <div class="right-col">
+                        <span class="percent-num">23%</span>
+                        <h2 class="section-heading">심리적 발달장애 / 발달장애</h2>
+                        <p class="sub-heading">자폐스펙트럼장애(ASD), 주의력결핍 과잉행동장애(ADHD), 학습장애(LD) 등의 발달장애.</p>
+                        <p class="sub-title">병 및 은둔으로 이어지는 요인:</p>
+                        <p class="desc-text">타고난 뇌의 특성으로 인해 "눈치껏 분위기를 파악하는 것이 어렵다", "의사소통에서 오해를 자주 산다", "건망증이나 실수가 많다"와 같은 어려움을 겪기 쉽습니다.</p>
+                        <p class="desc-text">그 결과 학교나 직장에서 실패 경험과 고립이 쌓이게 되고, 심신이 지친 끝에 이차적 장애(우울증 등)가 발생하여 은둔으로 이어지는 경우가 많습니다.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section 7 (7.jpg) -->
+        <section class="sec-7">
+            <div class="content-box">
+                <!-- 마무리 영역 -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 스크롤 위치에 따라 왼쪽부터 차례대로 진해지도록 연동하는 스크립트 -->
+    <script>
+        const steps = document.querySelectorAll('.story-step');
+        const container = document.querySelector('.sticky-story-container');
+
+        window.addEventListener('scroll', () => {
+            steps.forEach((step) => {
+                const rect = step.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+                    container.setAttribute('data-active', step.getAttribute('data-step'));
+                }
+            });
+        });
+    </script>
+</body>
+ <script src="js/script.js"></script>
+</body>
+</html>
